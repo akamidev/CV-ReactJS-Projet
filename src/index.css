@@ -1,0 +1,579 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Réinitialise les marges, les rembourrages, définit la police par défaut à 'poppins' et applique la boîte de bordure à tous les éléments */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+/* Applique un comportement de défilement doux à la page */ 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #060606;
+    color: #fff;
+}
+/* -----------------home------------------- */
+#home-content {
+    width: 100%;
+    height: 100vh;
+    background-position: 40% 10%;
+    background-image: url(../public/images/backgrounddesktop.png);
+    
+}
+
+#header {
+    width: 100%;
+    height: 5px;
+
+}
+
+.container {
+    padding: 10px 10%;
+
+
+}
+
+nav {
+ 
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 100px;
+}
+/* utilisée pour afficher un élément comme un bloc en ligne */
+nav ul li {
+    display: inline-block;   
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s linear;
+
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.home-text {
+    margin-top: 20%;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.home-text h1 {
+    font-size: 50px;
+    margin-top: 300px;
+}
+
+.home-text h1 span {
+    color: #ff004f;
+}
+
+/* ---------------Competence--------------- */
+
+/* Définit le rembourrage, la couleur et la marge de l'élément avec l'ID 'about' */
+#about {
+    padding: 70px 0;
+    color: #ababab;
+    margin: 9%;
+
+
+}
+/* Applique un affichage flex, justifie l'espace entre les éléments et permet l'enroulement des éléments pour l'élément avec la classe 'row' */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.sub-title {
+
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+/* Applique un affichage flex et ajoute une marge à l'élément avec la classe 'tab-titles' */
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+/* Définit la marge à droite, la taille de la police, le poids de la police, le curseur et la position de l'élément avec la classe 'tab-links' */
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    
+}
+/* Ajoute un effet de soulignement lors de l'activation du lien dans l'élément avec la classe 'tab-links' */
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #ff004f;
+    font-size: 15px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+
+                                     /* -------------portfolio---------------------- */
+
+/* Définit le style des champs de texte */
+input[type="text"] {
+    margin-top: 25px; /* Marge supérieure */
+    padding: 10px; /* Rembourrage */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 5px; /* Rayon de la bordure */
+    font-size: 16px; /* Taille de la police */
+    width: 100%; /* Largeur */
+    box-sizing: border-box; /* Inclut le rembourrage et la bordure dans la largeur totale */
+    transition: border-color 0.3s; /* Transition douce de la couleur de la bordure */
+}
+
+/* Change la couleur de la bordure lors de la mise au point sur le champ de texte */
+input[type="text"]:focus {
+    outline: none; /* Supprime le contour par défaut */
+    border-color: #ff004f; /* Nouvelle couleur de la bordure */
+}
+
+/* Définit le rembourrage et la marge de l'élément avec l'ID 'portfolio' */
+#portfolio {
+    padding: 50px 0;
+    margin: 10%;
+}
+
+/* Crée une grille pour la liste des travaux */
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Crée autant de colonnes que possible avec une largeur minimale de 250px */
+    grid-gap: 40px; /* Espacement entre les éléments de la grille */
+    margin-top: 50px; /* Marge supérieure */
+}
+
+/* Style pour chaque travail */
+.work {
+    border-radius: 10px; /* Rayon de la bordure */
+    position: relative; /* Position relative pour permettre le positionnement absolu des enfants */
+    overflow: hidden; /* Cache les enfants qui débordent */
+}
+
+/* Style pour les images de chaque travail */
+.work img {
+    width: 100%; /* Largeur */
+    border-radius: 10px; /* Rayon de la bordure */
+    display: block; /* Affichage en bloc */
+    transition: transform 0.5s; /* Transition douce de la transformation */
+}
+
+/* Style pour la couche superposée sur chaque travail */
+.layer {
+    width: 100%; /* Largeur */
+    height: 0; /* Hauteur initiale */
+    background: linear-gradient(rgba(0, 1, 1, 0.1), #ff004f); /* Dégradé en arrière-plan */
+    border-radius: 10px; /* Rayon de la bordure */
+    position: absolute; /* Position absolue */
+    left: 0; /* Position à gauche */
+    bottom: 0; /* Position en bas */
+    overflow: hidden; /* Cache les enfants qui débordent */
+    display: flex; /* Affichage en flex */
+    align-items: center; /* Centrage vertical des enfants */
+    justify-content: center; /* Centrage horizontal des enfants */
+    flex-direction: column; /* Orientation des enfants en colonne */
+    padding: 0 40px; /* Rembourrage */
+    text-align: center; /* Alignement du texte */
+    font-size: 10px; /* Taille de la police */
+    transition: height 0.5s; /* Transition douce de la hauteur */
+}
+
+/* Style pour les titres dans la couche */
+.layer h3 {
+    font-weight: 500; /* Poids de la police */
+    margin-bottom: 20px; /* Marge inférieure */
+    
+}
+
+/* Style pour les liens dans la couche */
+.layer a {
+    margin-top: 20px; /* Marge supérieure */
+    color: #ff004f; /* Couleur du texte */
+    text-decoration: none; /* Suppression du soulignement */
+    font-size: 18px; /* Taille de la police */
+    line-height: 60px; /* Hauteur de ligne */
+    background: #fff; /* Arrière-plan */
+    width: 60px; /* Largeur */
+    border-radius: 50%; /* Rayon de la bordure */
+    text-align: center; /* Alignement du texte */
+}
+
+/* Agrandit l'image et affiche la couche lorsque l'utilisateur survole un travail */
+.work:hover img {
+    transform: scale(1.1); /* Agrandissement de l'image */
+}
+.work:hover .layer {
+    height: 100%; /* Affichage de la couche */
+}
+
+/* Style pour le bouton */
+.btn {
+    display: block; /* Affichage en bloc */
+    margin: 50px auto; /* Marge */
+    width: fit-content; /* Largeur adaptée au contenu */
+    border: 1px solid #ff004f; /* Bordure */
+    padding: 14px 50px; /* Rembourrage */
+    text-decoration: none; /* Suppression du soulignement */
+    border-radius: 6px; /* Rayon de la bordure */
+    color: #fff; /* Couleur du texte */
+}
+
+/* Change l'arrière-plan du bouton lorsque l'utilisateur le survole */
+.btn:hover {
+    background: #ff004f;
+    transition: 0.5s;
+}
+
+                               /* -----------------contact-----------------  */
+
+
+/* Définit la largeur de la partie gauche du contact à 35% */
+.contact-left {
+    flex-basis: 35%;
+}
+
+/* Définit la largeur de la partie droite du contact à 60% */
+.contact-right {
+    flex-basis: 60%;
+}
+
+/* Ajoute une marge supérieure aux paragraphes dans la partie gauche du contact */
+.contact-left p {
+    margin-top: 30px;
+}
+
+/* Style pour les icônes dans les paragraphes de la partie gauche du contact */
+.contact-left p i {
+    color: #ff004f; /* Couleur de l'icône */
+    margin-right: 15px; /* Marge à droite de l'icône */
+    font-size: 20px; /* Taille de l'icône */
+}
+
+/* Ajoute une marge supérieure aux icônes sociales */
+.social-icons {
+    margin-top: 30px;
+}
+
+/* Style pour les liens des icônes sociales */
+.social-icons a {
+    margin-right: 15px; /* Marge à droite du lien */
+    color: #ababab; /* Couleur du lien */
+    font-size: 30px; /* Taille du lien */
+    text-decoration: none; /* Supprime le soulignement du lien */
+    transition: 0.5s; /* Transition douce lors du survol */
+    display: inline-block; /* Affichage en ligne */
+    transition: transform 0.5s; /* Transition douce lors de la transformation */
+}
+
+/* Change la couleur du lien et le déplace vers le haut lors du survol */
+.social-icons a:hover {
+    color: #ff004f; /* Nouvelle couleur du lien */
+    transform: translateY(-5px); /* Déplacement vers le haut */
+}
+
+/* Style pour le bouton avec la classe 'btn2' */
+.btn.btn2 {
+    display: inline-block; /* Affichage en ligne */
+    background: #ff004f; /* Couleur de fond du bouton */
+}
+
+/* Définit la largeur du formulaire dans la partie droite du contact à 100% */
+.contact-right form {
+    width: 100%;
+}
+
+/* Style pour les champs de saisie et les zones de texte du formulaire */
+form input,
+textarea {
+    width: 100%; /* Largeur */
+    padding: 15px; /* Rembourrage */
+    margin: 15px 0; /* Marge */
+    border: 0; /* Bordure */
+    border-radius: 6px; /* Rayon de la bordure */
+    background: #262626; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    font-size: 18px; /* Taille du texte */
+    padding: 15px; /* Rembourrage */
+    outline: none; /* Supprime le contour par défaut */
+}
+
+/* Style pour le bouton avec la classe 'btn2' dans le formulaire */
+form .btn2 {
+    margin-top: 20px; /* Marge supérieure */
+    padding: 14px 60px; /* Rembourrage */
+    font-size: 18px; /* Taille du texte */
+    cursor: pointer; /* Change le curseur en main lors du survol */
+}
+
+/* Style pour la carte Google Maps */
+.google-map {
+    display: flex;
+    width: 100%; /* Largeur */
+    height: 20px; /* Hauteur */
+    overflow: hidden; /* Cache le contenu débordant */
+    border-radius: 10px; /* Rayon de la bordure */
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); /* Ombre portée */
+    border-radius: 10px;
+}
+
+/* Style pour l'iframe de la carte Google Maps */
+.google-map iframe {
+    width: 100%; /* Largeur */
+    height: 100%; /* Hauteur */
+    border: 0; /* Bordure */
+    border-radius: 10px; /* Rayon de la bordure */
+}
+              /* ----------------------Footer------------------- */
+/* Style pour le copyright */
+.Copyright {
+    bottom: 0; /* Position en bas */
+    position: absolute; /* Position absolue */
+    width: 100%; /* Largeur */
+    background: #262626; /* Couleur de fond */
+    padding: 25px 0; /* Rembourrage */
+    font-weight: 300; /* Poids de la police */
+    text-align: center; /* Alignement du texte */
+}
+
+
+                                /* -----Scroll to top button----------------- */
+
+/* Définit le style pour l'élément avec la classe .scroll-to-top */
+.scroll-to-top {
+    position: fixed; /* Position fixe par rapport à la fenêtre du navigateur */
+    bottom: 20px; /* 20px du bas de la fenêtre */
+    right: 20px; /* 20px du côté droit de la fenêtre */
+    background-color: #ff004f; 
+    color: #fff; 
+    padding: 10px; /* Espace intérieur de 10px */
+    border-radius: 50%; /* Bord arrondi pour créer une forme circulaire */
+    font-size: 20px; /* Taille de la police de 20px */
+    text-decoration: none; /* Supprime la décoration du texte (comme les soulignements) */
+    transition: background-color 0.3s; /* Transition douce de la couleur de fond sur 0.3s */
+
+}
+
+/* Définit le style pour l'élément avec la classe .scroll-to-top lorsqu'il est survolé */
+.scroll-to-top:hover {
+    background-color: #e8477a; /* Change la couleur de fond en rose clair lors de la survol */
+}
+
+                               /* -----------------media query----------------- */
+                               
+nav .fa-solid {     /* Style pour l'icône solide dans la navigation */
+    display: none; /* Affichage en bloc */
+    font-size: 30px; /* Taille de l'icône */
+} 
+
+
+@media only screen and (max-width: 600px) {
+
+   /* Style pour l'élément avec l'id 'home-content' */
+#home-content {
+    background-image: url(../public/images/Screen-phone.png); /* Image de fond */
+    background-position: 70% 10%; /* Position de l'image de fond */
+    width: 100%; /* Largeur */
+    height: 100%; /* Hauteur */
+    font-size: 30px; /* Taille du texte */
+}
+
+/* Style pour l'élément avec la classe 'home-text' */
+.home-text {
+    margin-top: 100%; /* Marge supérieure */
+    font-size: 16px; /* Taille du texte */
+}
+
+/* Style pour le titre h1 dans l'élément avec la classe 'home-text' */
+.home-text h1 {
+    font-size: 30px; /* Taille du texte */
+}
+
+/* Style pour l'icône solide dans la navigation */
+nav .fa-solid {
+    display: block; /* Affichage en bloc */
+    font-size: 30px; /* Taille de l'icône */
+}
+
+/* Style pour l'icône des barres dans la navigation */
+nav .fa-bars {
+    right: 10px; /* Position à droite */
+    font-size: 30px; /* Taille de l'icône */
+    position: absolute; /* Position absolue */
+}
+
+/* Style pour la liste dans la navigation */
+nav ul {
+    background: #ff004f; /* Couleur de fond */
+    justify-content: space-around; /* Espacement entre les éléments */
+    position: fixed; /* Position fixe */
+    top: 0; /* Position en haut */
+    right: -200px; /* Position à droite */
+    width: 160px; /* Largeur */
+    height: 100vh; /* Hauteur */
+    padding-top: 50%; /* Rembourrage en haut */
+    z-index: 2; /* Index de superposition */
+    transition: 0.s; /* Transition instantanée */
+}
+
+/* Style pour les éléments de la liste dans la navigation */
+nav ul li {
+    display: block; /* Affichage en bloc */
+    margin: 25px; /* Marge */
+}
+
+/* Style pour l'icône solide dans la liste de la navigation */
+nav ul .fa-solid {
+    position: absolute; /* Position absolue */
+    top: 25px; /* Position en haut */
+    left: 25px; /* Position à gauche */
+    cursor: pointer; /* Change le curseur en main lors du survol */
+}
+
+/* Style pour l'élément avec la classe 'sub-title' */
+.sub-title {
+    font-size: 30px; /* Taille du texte */
+    margin-top:20% ; /* Marge supérieure */
+}
+
+/* Style pour les éléments avec les classes 'about-col-1' et 'about-col-2' */
+.about-col-1,
+.about-col-2 {
+    margin-bottom: 30px; /* Marge inférieure */
+}
+
+/* Style supplémentaire pour l'élément avec la classe 'about-col-2' */
+.about-col-2 {
+    font-size: 10px; /* Taille du texte */
+    display: flex; /* Affichage en flexbox */
+    top: 0; /* Position en haut */
+    flex-direction: column; /* Orientation de la flexbox en colonne */
+    margin-bottom: 50%; /* Marge inférieure */
+}
+
+/* Style pour l'élément avec la classe 'tab-links' */
+.tab-links {
+    margin-right: 10px; /* Marge à droite */
+    font-size: 7px; /* Taille du texte */
+}
+
+/* Style pour les éléments avec les classes 'contact-left' et 'contact-right' */
+.contact-left,
+.contact-right {
+    flex-basis: 100%; /* Base de flexibilité */
+    margin-bottom: 30%; /* Marge inférieure */
+}
+.containr {
+    padding: 0px 0%;
+
+
+}
+.scroll-to-top {
+    position: fixed; /* Position fixe par rapport à la fenêtre du navigateur */
+    bottom: 20px; /* 20px du bas de la fenêtre */
+    right: 20px; /* 20px du côté droit de la fenêtre */
+    background-color: #ff004f; 
+    color: #fff; 
+    border-radius: 50%; /* Bord arrondi pour créer une forme circulaire */
+    font-size: 10px; /* Taille de la police de 20px */
+    text-decoration: none; /* Supprime la décoration du texte (comme les soulignements) */
+    transition: background-color 0.3s; /* Transition douce de la couleur de fond sur 0.3s */
+
+}
+
+/* Définit le style pour l'élément avec la classe .scroll-to-top lorsqu'il est survolé */
+.scroll-to-top:hover {
+    background-color: #e8477a; /* Change la couleur de fond en rose clair lors de la survol */
+}
+/* Style pour l'élément avec la classe 'Copyright' */
+.Copyright {
+    height: 100px; /* Hauteur */   
+    font-size: 10px; /* Taille du texte */
+    bottom: 0; /* Position en bas */
+    position: absolute; /* Position absolue */
+    width: 100%; /* Largeur */
+}
+iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 90px;
+    margin-top: -100px;
+}
+#msg {
+    display: block;
+    margin-top: -40px;
+    margin-right: 20px; 
+}
+input[type="text"] {
+    margin-top: 25px; /* Marge supérieure */
+    padding: 10px; /* Rembourrage */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 5px; /* Rayon de la bordure */
+    font-size: 16px; /* Taille de la police */
+    width: 115%; /* Largeur */
+    box-sizing: border-box; /* Inclut le rembourrage et la bordure dans la largeur totale */
+    transition: border-color 0.3s; /* Transition douce de la couleur de la bordure */
+}
+}
