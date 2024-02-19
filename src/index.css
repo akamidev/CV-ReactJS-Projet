@@ -572,7 +572,7 @@ input[type="text"] {
     border: 1px solid #ccc; /* Bordure */
     border-radius: 5px; /* Rayon de la bordure */
     font-size: 16px; /* Taille de la police */
-    width: 115%; /* Largeur */
+    width: 100%; /* Largeur */
     box-sizing: border-box; /* Inclut le rembourrage et la bordure dans la largeur totale */
     transition: border-color 0.3s; /* Transition douce de la couleur de la bordure */
 }
